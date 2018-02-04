@@ -1,12 +1,14 @@
+import { connect } from "tls";
+
 var connection = require("../config/connection.js");
 
 // methods to be created:
 
-selectAll()
+//selectAll()
 
-insertONe()
+//insertONe()
 
-updateOne()
+//updateOne()
 
 // Looping through to create an array of question marks
 
@@ -55,15 +57,43 @@ var orm = {
         });
     },
     //next function here INSERToNE()
-}
+    insertONe: function (table, cols, vals, cb) {
+        var queryString = "INSERT INTO" + table;
+        queryString += " (";
+        queryString += cols.toString();
+        queryString += ") ";
+        queryString += "VALUES (";
+        queryString += printQuestionMarks(vals.length);
+        queryString += ") ";
 
+        console.log(queryString);
 
+        connection.query(queryString, vals, function (err, result) {
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        });
+    },
+//example of objColVals; {name: cheeseburger, devoured: true}
 
+updateOne: function(table, objColVals, condition, cb) {
+    var queryString = "UPDATE" + table;
 
+    queryString += "SET";
+    queryString += objToSql(objColVals);
+    queryString += "WERE";
+    queryString += condition;
 
-
-
-
+    console.log("The queryString is: " + queryString);
+    connection.query(queryString, function(err, result) {
+        if (err) {
+            throw err;
+        }
+        cb(result);
+    });
+},
+};
 
 // syntax to export
 module.exports = orm;
