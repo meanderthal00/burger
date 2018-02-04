@@ -4,11 +4,11 @@ var connection = require("../config/connection.js");
 
 // methods to be created:
 
-selectAll()
+//selectAll()
 
-insertONe()
+//insertONe()
 
-updateOne()
+//updateOne()
 
 // Looping through to create an array of question marks
 
