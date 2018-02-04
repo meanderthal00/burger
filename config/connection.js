@@ -1,3 +1,5 @@
+// THIS PAGE IS DONE
+
 var mysql = require("mysql");
 
 // creating the connection
