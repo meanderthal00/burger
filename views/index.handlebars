@@ -1,0 +1,60 @@
+<div class="container" id="indexTop">
+        <h1>Git-N-My Belly</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row panel-row"></div>
+                {{!-- panel for holding created burgers --}}
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="notEaten">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr class="table-success table hover">
+                                        <th scope="row">Burgers not in my belly</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        {{#each burgers}} {{#unless notEaten}} {{>burgers/burger-block devoured=false}} {{/unless}} {{/each}}
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                {{!-- panel for displaying devoured burgers --}}
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="eatenBurgers">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr class="table-info table hover">
+                                        <th scope="row">Burgers in my belly
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        {{#each burgers}} {{#if eaten}} {{>burgers/burger-block devoured=true}} {{/if}} {{/each}}
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="textAreaInput">
+            <div class="col-md-6 offset-md-4">
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-lg" for="inputLarge">Feed my belly</label>
+                    <input class="form-control form-control-lg" type="text" placeholder="Add your creation here!" id="inputLarge">
+                    <button type="button" class="btn btn-secondary" id="burgerSubmitS">Gimme!</button>
+                </div>
+            </div>
+        </div>
+    </div>
