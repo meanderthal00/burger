@@ -17,7 +17,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        {{#each burgers}} {{#unless notEaten}} {{>burgers/burger-block devoured=false}} {{/unless}} {{/each}}
+                                        {{#each burgers}} {{#unless notEaten}} {{>burgers/burgers-block devoured=false}} {{/unless}} {{/each}}
                                     </tr>
                                 </tbody>
                             </table>
@@ -38,7 +38,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        {{#each burgers}} {{#if eaten}} {{>burgers/burger-block devoured=true}} {{/if}} {{/each}}
+                                        {{#each burgers}} {{#if eaten}} {{>burgers/burgers-block devoured=true}} {{/if}} {{/each}}
                                     </tr>
                                 </tbody>
                             </table>
