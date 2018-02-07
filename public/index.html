@@ -1,0 +1,159 @@
+<DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8"> {{!--Favicon link --}}
+        <link rel="icon" type="image/png" href="/public/assets/images/####.png" {{!-- Link to CSS --}} <link rel="stylesheet" href="../../public/assets/css/style.css"
+            type="text/css" /> {{!-- bootstrap link --}}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+            crossorigin="anonymous"> {{!-- bootswatch theme --}}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/litera/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-IzI0oYQkUWBlg1pHwxuQHkY3lDjpB6aHpvi1eomAYMJlD7yk+TvMZoRXt0Wk31WJ" crossorigin="anonymous">">
+
+        <title>Git-N-My Belly</title>
+
+
+    </head>
+
+    <body>
+
+        <!-- {{{body}}}
+    
+ -->
+        <div class="container" id="indexTop">
+            <h1>
+                <center>Git-N-My Belly</center>
+            </h1>
+            <hr>
+        </div>
+        <div class="main-container" style="background-image: url(assets/images/burgers.jpg)" style= "background-size: cover" >
+            <div class="row">
+                <div class="col-md-5 offset-md-1">
+                    <div class="card border-dark mb-3" style="max-width: 20rem;" id="notEaten">
+                        <div class="card-header">Doomed Burgers</div>
+                        <div class="card-body">
+                            <h4 class="card-title">Burgers not in my Belly</h4>
+                            <p class="card-text">
+                                <table class="table table-hover">
+                                    <tbody>
+
+                                        <tr class="table-dark">
+                                            <th scope="row"></th>
+                                            {{#each burgers}} {{#unless notEaten}} {{>burgers/burgers-block devoured=false}} {{/unless}} {{/each}}
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button type="button" class="btn btn-info" id="devourMe" data-id="{{id}}" data-newdevoured="{{devoured}}">
+                                    Feed da Belly!
+                                </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 offset-md-1" id="eatenBurgers">
+                    <div class="card border-dark mb-3" style="max-width: 20rem;">
+                        <div class="card-header">Fond Memories</div>
+                        <div class="card-body text-dark">
+                            <h4 class="card-title">Burgers in my Belly</h4>
+                            <table class="table table-hover">
+                                <tbody>
+
+                                    <tr class="table-dark">
+                                        <th scope="row"></th>
+                                        {{#each burgers}} {{#if eaten}} {{>burgers/burgers-block devoured=true}} {{/if}} {{/each}}
+                                       
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="textAreaInput">
+                <div class="col-md-6 offset-md-3">
+                    <div class="form-group">
+                        <label class="col-form-label col-form-label-lg" for="inputLarge">Feed my belly</label>
+                        <input class="form-control form-control-lg" type="text" placeholder="Add your creation here!" id="inputLarge">
+                        <button type="button" class="btn btn-secondary" id="burgerSubmitS">Gimme!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="container" id="indexTop">
+    <h1>Git-N-My Belly</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row panel-row"></div>
+            {{!-- panel for holding created burgers --}}
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-body" id="notEaten">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr class="table-success table hover">
+                                    <th scope="row">Burgers not in my belly</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    {{#each burgers}} {{#unless notEaten}} {{>burgers/burgers-block devoured=false}} {{/unless}} {{/each}}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            {{!-- panel for displaying devoured burgers --}}
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-body" id="eatenBurgers">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr class="table-info table hover">
+                                    <th scope="row">Burgers in my belly
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    {{#each burgers}} {{#if eaten}} {{>burgers/burgers-block devoured=true}} {{/if}} {{/each}}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="textAreaInput">
+        <div class="col-md-6 offset-md-4">
+            <div class="form-group">
+                <label class="col-form-label col-form-label-lg" for="inputLarge">Feed my belly</label>
+                <input class="form-control form-control-lg" type="text" placeholder="Add your creation here!" id="inputLarge">
+                <button type="button" class="btn btn-secondary" id="burgerSubmitS">Gimme!</button>
+            </div>
+        </div>
+    </div>
+</div>
+ <tr>
+    <td>
+        {{burger_name}}
+    </td>
+    <td>
+        <button type="button" class="btn btn-info" id="devourMe" data-id="{{id}}" data-newdevoured="{{devoured}}">
+            Take all the bites
+        </button>
+
+    </td>
+</tr> -->
+
+
+    </body>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="../../public/assets/js/burgers.js"></script>
+
+    </html>
