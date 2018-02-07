@@ -1,4 +1,65 @@
-<div class="container" id="indexTop">
+<div class="main-container" style="background-image: url(assets/images/burgers.jpg)" style="background-size: contain;">
+            <div class="row">
+                <!-- card for burgers created -->
+                <div class="col-md-5 offset-md-1">
+                    <div class="card border-dark mb-3" style="max-width: 30rem;" id="notEaten">
+                        <div class="card-header">You Created:</div>
+                        <div class="card-body">
+                            <h4 class="card-title">Burgers not in my Belly</h4>
+
+                            <table class="table table-hover">
+                                <thead>
+                                    <tbody>
+                                        <tr class="table-dark">
+                                            <td>
+                                                {{#each burgers}} {{#unless notEaten}} {{>burgers/burgers-block devoured=false}} {{/unless}} {{/each}}
+                                                <button type="button" class="btn btn-info" id="devourMe" data-id="{{id}}" data-newdevoured="{{devoured}}">
+                                                    Feed da Belly!
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="textAreaInput">
+                <div class="col-md-6 offset-md-3">
+                    <div class="form-group">
+                        <label class="col-form-label col-form-label-lg" for="inputLarge" id="buttonText">Feed my belly</label>
+                        <input class="form-control form-control-lg" type="text" placeholder="Add your creation here!" id="inputLarge">
+                        <button type="button" class="btn btn-secondary" id="burgerSubmitS">Gimme!</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- <div class="container" id="indexTop">
         <h1>Git-N-My Belly</h1>
     </div>
     <div class="container">
@@ -57,4 +118,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
+
+
+
+
+    

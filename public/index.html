@@ -1,3 +1,6 @@
+<!-- ===================================================================
+IN MAIN HANDLEBARS
+=================================================================== -->
 <DOCTYPE html>
     <html lang="en">
 
@@ -27,12 +30,12 @@
             <hr>
         </div>
         <div class="main-container" style="background-image: url(assets/images/burgers.jpg)" style="background-size: contain;">
-               <div class="row">
+            <div class="row">
                 <!-- card for burgers created -->
                 <div class="col-md-5 offset-md-1">
                     <div class="card border-dark mb-3" style="max-width: 30rem;" id="notEaten">
                         <div class="card-header">You Created:</div>
-                        <div class="card-body" id="notEaten">
+                        <div class="card-body">
                             <h4 class="card-title">Burgers not in my Belly</h4>
 
                             <table class="table table-hover">
@@ -52,23 +55,23 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5 offset-md-1" id="eatenBurgers">
-                    <div class="card border-dark mb-3" style="max-width: 30rem;">
+                <div class="col-md-5 offset-md-1" >
+                    <div class="card border-dark mb-3" style="max-width: 30rem;" id="eatenBurgers">
                         <div class="card-header">I ate:</div>
                         <div class="card-body text-dark">
                             <h4 class="card-title">Burgers in my Belly</h4>
                             <table class="table table-hover">
-                                    <thead>
-                                        <tbody>
-                                            <tr class="table-dark">
-                                                <td>
-                                                        {{#each burgers}} {{#if eaten}} {{>burgers/burgers-block devoured=true}} {{/if}} {{/each}}
-                                                  
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                </table>
-    
+                                <thead>
+                                    <tbody>
+                                        <tr class="table-dark">
+                                            <td>
+                                                {{#each burgers}} {{#if eaten}} {{>burgers/burgers-block devoured=true}} {{/if}} {{/each}}
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                            </table>
+
                         </div>
                     </div>
                 </div>
