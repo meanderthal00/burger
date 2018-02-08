@@ -1,0 +1,10 @@
+body{
+    /* background: -webkit-linear-gradient(top, #a7cfdf 45%,#23538a 100%); */
+    background-image: url(../public/assets/images/seamlesspattern.jpg);
+}
+.main-container{
+    background-image: url(../public/assets/images/burgers.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
