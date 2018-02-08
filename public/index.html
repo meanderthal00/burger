@@ -1,5 +1,5 @@
 <!-- ===================================================================
-IN MAIN HANDLEBARS
+BELOW IN MAIN HANDLEBARS
 =================================================================== -->
 <DOCTYPE html>
     <html lang="en">
@@ -29,6 +29,10 @@ IN MAIN HANDLEBARS
             </h1>
             <hr>
         </div>
+<!-- END OF MAIN HANDLEBARS
+================================================
+BELOW IS IN INDEX HANDLEBARS
+================================================ -->
         <div class="main-container" style="background-image: url(assets/images/burgers.jpg)" style="background-size: contain;">
             <div class="row">
                 <!-- card for burgers created -->
@@ -41,6 +45,9 @@ IN MAIN HANDLEBARS
                             <table class="table table-hover">
                                 <thead>
                                     <tbody>
+                <!-- ===================================================
+                   THIS BUTTON IN BURGERS BLOCK
+                =================================================== -->
                                         <tr class="table-dark">
                                             <td>
                                                 {{#each burgers}} {{#unless notEaten}} {{>burgers/burgers-block devoured=false}} {{/unless}} {{/each}}
@@ -49,6 +56,7 @@ IN MAIN HANDLEBARS
                                                 </button>
                                             </td>
                                         </tr>
+                <!-- ========================================================                         -->
                                     </tbody>
                             </table>
 
@@ -80,14 +88,16 @@ IN MAIN HANDLEBARS
                 <div class="col-md-6 offset-md-3">
                     <div class="form-group">
                         <label class="col-form-label col-form-label-lg" for="inputLarge" id="buttonText">Feed my belly</label>
-                        <input class="form-control form-control-lg" type="text" placeholder="Add your creation here!" id="inputLarge">
-                        <button type="button" class="btn btn-secondary" id="burgerSubmitS">Gimme!</button>
+                        <input class="form-control form-control-lg" type="text"id="burgerSubmitS placeholder="Add your creation here!" id="inputLarge">
+                        <button type="button" class="btn btn-secondary" ">Gimme!</button>
                     </div>
                 </div>
             </div>
         </div>
-
-
+<!-- END OF INDEX HANDLEBARS
+=======================================================================
+BELOW IS IN MAIN HANDLEBARS
+======================================================================= -->
 
     </body>
 
