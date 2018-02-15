@@ -5,7 +5,7 @@
 Git-N-My Belly  is an application to help fill the endless void that is my stomach. With it you can create and devour delicious, delicious burgers. This is my attempt at a full-stack application. I have employed a mySQL database to store data, Node.js, Express server, JavaScript, and a Bootstrap front-end interface.
 
 ### Heroku:
-[Git-N-My Belly ](https://desolate-sea-73643.herokuapp.com/)
+[Git-N-My Belly ]( https://afternoon-journey-69749.herokuapp.com)
 is hosted on Heroku 
 
 Technologies Used

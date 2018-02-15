@@ -9,7 +9,7 @@ var port = process.env.PORT || 3000;
 var app = express();
 
 //pulling static content for the app from the public folder
-app.use(express.static(".burger/public"));
+app.use(express.static("./public"));
 
 //parsing the application
 app.use(bodyParser.urlencoded({
